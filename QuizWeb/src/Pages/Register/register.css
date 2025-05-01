@@ -1,0 +1,35 @@
+.register {
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    padding: 20px 30px;
+    background-color: #F5F7F9;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+.register h2 {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+.register .input {
+    margin-bottom: 10px;
+}
+.register .input input{
+    display: block;
+    padding: 0 10px;
+    margin-top: 5px;
+    width: 100%;
+    height: 30px;
+    border: 1px solid gainsboro;
+    border-radius: 3px;
+}
+.register button {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+

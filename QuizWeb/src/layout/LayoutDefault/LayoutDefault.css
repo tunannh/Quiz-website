@@ -1,0 +1,63 @@
+ul {
+    padding: 0;
+    margin: 0;
+}
+ul li {
+    list-style-type: none;
+}
+.layout__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+    background-color: #EFEFEF;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+.layout__header .layout__logo {
+    font-weight: 700;
+    font-size: 25px;
+    color: black;
+}
+.layout__header .layout__menu ul {
+    display: flex;
+}
+.layout__header .layout__menu ul li a{
+    display: inline-block;
+    padding: 25px 15px;
+    font-size: 20px;
+    color: #3968CB;
+    font-weight: 500;
+    transition: background 0.5s;
+}
+.layout__header .layout__menu ul li a:hover {
+    background-color: white;
+}
+.layout__header .layout__account {
+    font-size: 18px;
+}
+.layout__header .layout__account a {
+    color: black;
+}
+.layout__header .layout__account a:last-child {
+    margin-left: 10px;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 8px;
+    background-color: #3968CB;
+    transition: background 0.5s;
+}
+.layout__header .layout__account a:last-child:hover {
+    background-color: #7B9ADC;
+}
+.layout__header .layout__account .sign-in:hover {
+    color: #3968CB;
+}
+footer {
+    padding: 15px;
+    margin-top: 30px;
+    background-color: black;
+    color: white;
+}
