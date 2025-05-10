@@ -33,7 +33,7 @@ const routes = [
             element: <Answer />
           },
           {
-            path: "result",
+            path: "result/:id",
             element: <Result />
           },
           {
@@ -41,7 +41,7 @@ const routes = [
             element: <Topic />
           },
           {
-            path: "quiz",
+            path: "quiz/:id",
             element: <Quiz />
           },
         ]

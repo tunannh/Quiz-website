@@ -8,6 +8,7 @@ function LayoutDefault() {
   const token = getCookie("token");
   const dispatch = useDispatch();
   const isLogin = useSelector(state => state.loginReducer);
+  console.log(isLogin);
   const handleLogout = () => {
     deleteAllCookie();
     dispatch(checkLogin(!isLogin));

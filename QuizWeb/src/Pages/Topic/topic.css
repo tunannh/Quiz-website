@@ -1,0 +1,24 @@
+.topic {
+    margin-left: 50px;
+}
+table {
+  border-collapse: collapse;
+}
+td {
+    width: 200px;
+    padding: 20px 15px;
+    border: 1px solid black;
+}
+
+table tr .t a {
+    padding: 5px 10px;
+    background-color: #0078D4;
+
+    border-radius: 5px;
+    color: white;
+    transition: background 0.5s;
+}
+table tr .t a:hover {
+    background-color: #3968CB;
+
+}
