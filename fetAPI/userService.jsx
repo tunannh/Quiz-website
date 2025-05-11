@@ -1,12 +1,12 @@
-import { get, post } from "../utils/requestMethod";
+import { get, post } from "../crud/requestMethod";
 
 export const login = async (email, password) => {
     const result = await get(`users?email=${email}&password=${password}`)
     return result;
 };
 
-export const register = async (path, data) => {
-    const result = await post(path, data);
+export const register = async (data) => {
+    const result = await post("users", data);
     return result;
 }
 

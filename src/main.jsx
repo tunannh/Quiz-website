@@ -3,7 +3,7 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { createStore } from 'redux'
-import allReducers from './reducer/index.jsx'
+import allReducers from "../reducer/allReducer"
 import { Provider } from "react-redux"
 
 const store = createStore(allReducers);

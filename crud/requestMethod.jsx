@@ -1,4 +1,4 @@
-const API_DOMAIN = "http://localhost:3000/";
+const API_DOMAIN = "https://db-for-quizweb-tunannhs-projects.vercel.app/";
 
 export const get = async (path) => {
     const respond = await fetch(API_DOMAIN + path);

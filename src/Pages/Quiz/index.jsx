@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom"
-import { getTopic } from "../../services/topicService";
-import { getListQuestion } from "../../services/questionService";
+import { getTopic } from "../../../fetAPI/topicService";
+import { getListQuestion } from "../../../fetAPI/questionService";
 import "./quiz.css"
 import { getCookie } from "../../../helper/cookie";
-import { addAnswer, getListAnswer } from "../../services/answerService";
+import { addAnswer, getListAnswer } from "../../../fetAPI/answerService";
 
 function Quiz() {
   const param = useParams();
@@ -47,17 +47,25 @@ function Quiz() {
         })
       }
     }
+    // const day = new Date().getDate();
+    // const month = new Date().getMonth() + 1;
+    // const year = new Date().getFullYear();
+    // const hour = new Date().getHours();
+    // const minute = new Date().getMinutes();
+    const now = new Date();
+    const date = now.toLocaleDateString('en-GB');
+    const time = now.toLocaleTimeString('en-GB');
+    const timesubmit = `${date} ${time}`;
+    
     const option = {
+      time: timesubmit,
       userId: parseInt(getCookie("id")),
       topicId: parseInt(param.id),
       answer: selectedAnswer,
       id: listAns.length + 1
     }
+    navigate(`/result/${option.id}`);
     const result = await addAnswer(option);
-    console.log(result);
-    if (result) {
-      navigate(`/result/${result.id}`);
-    }
   }
 
   return (

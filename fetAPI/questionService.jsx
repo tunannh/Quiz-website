@@ -1,4 +1,4 @@
-import { get } from "../utils/requestMethod"
+import { get } from "../crud/requestMethod"
 
 export const getAllQuestion = async () => {
     const result = await get("questions");

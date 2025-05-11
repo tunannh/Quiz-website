@@ -2,7 +2,7 @@ import { NavLink, Outlet } from "react-router-dom"
 import "./LayoutDefault.css"
 import { deleteAllCookie, getCookie } from "../../../helper/cookie"
 import { useDispatch, useSelector } from "react-redux";
-import { checkLogin } from "../../actions/loginActions";
+import { checkLogin } from "../../../reducer/actions/loginActions"
 
 function LayoutDefault() {
   const token = getCookie("token");

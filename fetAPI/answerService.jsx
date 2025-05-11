@@ -1,5 +1,5 @@
-import { getCookie } from "../../helper/cookie"
-import { get, post } from "../utils/requestMethod";
+import { getCookie } from "../helper/cookie";
+import { get, post } from "../crud/requestMethod";
 
 export const getListAnswerByUserId = async () => {
     const userId = getCookie("id");

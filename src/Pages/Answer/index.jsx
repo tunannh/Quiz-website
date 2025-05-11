@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { getListAnswerByUserId } from "../../services/answerService";
-import { getListTopic } from "../../services/topicService";
+import { getListAnswerByUserId } from "../../../fetAPI/answerService"
+import { getListTopic } from "../../../fetAPI/topicService";
 import { Link } from "react-router-dom";
 import "./answer.css"
 
@@ -30,7 +30,7 @@ function Answer() {
         <table>
           <thead>
             <tr>
-              <th>Id</th>
+              <th>Thời gian nộp</th>
               <th>Chủ đề</th>
               <th>Hành động</th>
             </tr>
@@ -38,7 +38,7 @@ function Answer() {
           <tbody>
             {answer.map(item => (
               <tr key={item.id}>
-                <td>{item.id}</td>
+                <td>{item.time}</td>
                 <td>{item.name}</td>
                 <td className="t"><Link to={"/result/" + item.id}> Xem Chi tiết</Link></td>
               </tr>

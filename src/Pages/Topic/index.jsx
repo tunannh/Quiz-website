@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import "./topic.css"
 import { Link } from "react-router-dom"
-import { getListTopic } from "../../services/topicService";
+import { getListTopic } from "../../../fetAPI/topicService";
 
 function Topic() {
   const [topics, setTopics] = useState([]);

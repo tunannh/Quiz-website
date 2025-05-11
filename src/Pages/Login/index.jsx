@@ -1,9 +1,9 @@
-import { login } from "../../services/userService";
+import { login } from "../../../fetAPI/userService";
 import { useNavigate } from "react-router-dom"
 import "./login.css"
 import { setCookie } from "../../../helper/cookie";
 import { useDispatch } from "react-redux";
-import { checkLogin } from "../../actions/loginActions";
+import { checkLogin } from "../../../reducer/actions/loginActions"
 
 function Login() {
   const toHome = useNavigate();

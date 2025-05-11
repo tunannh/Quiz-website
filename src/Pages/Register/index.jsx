@@ -1,6 +1,6 @@
 import "./register.css"
 import { generateToken } from "../../../helper/generateToken";
-import { checkExist, register } from "../../services/userService";
+import { checkExist, register } from "../../../fetAPI/userService";
 import { useNavigate } from "react-router-dom";
 
 function Register() {
@@ -22,12 +22,16 @@ function Register() {
         password: password,
         token: generateToken()
       };
-      const result = await register("users", inForAccount);
-      if (result) {
-        toLogin("/login")
-      } else {
-        alert("Sign up failed")
-      }
+      alert("Sign up successful");
+      toLogin("/login");
+      const result = await register(inForAccount);
+      
+      // if (result) {
+      //   alert("Sign up successful")
+      //   toLogin("/login")
+      // } else {
+      //   alert("Sign up failed")
+      // }
     }
   }
   return (
