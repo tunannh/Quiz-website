@@ -1,0 +1,5 @@
+table thead th {
+    width: 200px;
+    padding: 20px 15px;
+    border: 1px solid black;
+}
