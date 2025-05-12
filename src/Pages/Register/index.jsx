@@ -1,9 +1,18 @@
 import "./register.css"
 import { generateToken } from "../../../helper/generateToken";
-import { checkExist, register } from "../../../fetAPI/userService";
+import { checkExist, getListUser, register } from "../../../fetAPI/userService";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function Register() {
+  const [user, setUser] = useState([])
+  useEffect(() => {
+    const fetchApi = async () => {
+      const result = await getListUser();
+      setUser(result);
+    }
+    fetchApi();
+  }, [])
   const toLogin = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,7 +29,8 @@ function Register() {
         fullName: fullName,
         email: email,
         password: password,
-        token: generateToken()
+        token: generateToken(),
+        id: user.length.toString()
       };
       alert("Sign up successful");
       toLogin("/login");

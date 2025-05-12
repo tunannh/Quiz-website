@@ -1,11 +1,12 @@
 .quiz {
     margin-left: 100px;
 }
-.quiz__list p {
+.quiz .quiz__list p {
     margin-top: 25px;
     margin-bottom: 5px;
 }
 .quiz .quiz__list form button {
     padding: 10px 25px;
     margin-top: 20px;
+    font-size: 15px;
 }

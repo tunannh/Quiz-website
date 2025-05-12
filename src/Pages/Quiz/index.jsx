@@ -56,16 +56,33 @@ function Quiz() {
     const date = now.toLocaleDateString('en-GB');
     const time = now.toLocaleTimeString('en-GB');
     const timesubmit = `${date} ${time}`;
-    
+
     const option = {
       time: timesubmit,
       userId: parseInt(getCookie("id")),
       topicId: parseInt(param.id),
-      answer: selectedAnswer,
-      id: listAns.length + 1
+      answers: selectedAnswer,
+      id: listAns.length.toString()
     }
-    navigate(`/result/${option.id}`);
-    const result = await addAnswer(option);
+
+    // const result = await addAnswer(option);
+    fetch('https://db-for-quizweb-tunannhs-projects.vercel.app/answers', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(option),
+    })
+      .then(res => {
+        if (!res.ok) {
+          console.warn('Lỗi POST nhưng vẫn tiếp tục:', res.status);
+        }
+        return res.json();  // Có thể lỗi tiếp, nên bắt tiếp
+      })
+      .then(data => {
+        console.log('Kết quả:', data);
+      })
+      .catch(err => {
+        navigate(`/result/${option.id}`);
+      });
   }
 
   return (

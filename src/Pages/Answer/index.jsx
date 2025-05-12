@@ -10,6 +10,8 @@ function Answer() {
     const fetchapi = async () => {
       const listAnswer = await getListAnswerByUserId();
       const listTopic = await getListTopic();
+      console.log(listAnswer);
+      console.log(listTopic);      
       let result = [];
       for (let i = 0; i < listAnswer.length; i++) {
         const topic = listTopic.find(item => item.id == listAnswer[i].topicId)
@@ -27,7 +29,8 @@ function Answer() {
     <>
       <div className="answer" style={{ marginLeft: "50px" }}>
         <h2>Danh sách các bài đã làm</h2>
-        <table>
+        {(answer.length > 0) ? (
+          <table>
           <thead>
             <tr>
               <th>Thời gian nộp</th>
@@ -37,14 +40,17 @@ function Answer() {
           </thead>
           <tbody>
             {answer.map(item => (
-              <tr key={item.id}>
-                <td>{item.time}</td>
-                <td>{item.name}</td>
-                <td className="t"><Link to={"/result/" + item.id}> Xem Chi tiết</Link></td>
-              </tr>
-            ))}
+                <tr key={item.id}>
+                  <td>{item.time}</td>
+                  <td>{item.name}</td>
+                  <td className="t"><Link to={"/result/" + item.id}> Xem Chi tiết</Link></td>
+                </tr>
+              ))}
           </tbody>
         </table>
+        ) : (
+          <p style={{fontWeight: '500', color: 'red'}}>Danh sách bài đã làm trống</p>
+        )}
       </div>
     </>
   )

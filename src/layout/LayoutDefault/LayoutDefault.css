@@ -33,7 +33,7 @@ ul li {
     transition: background 0.5s;
 }
 .layout__header .layout__menu ul li a:hover {
-    background-color: white;
+    background-color: #efefef;
 }
 .layout__header .layout__account {
     font-size: 18px;

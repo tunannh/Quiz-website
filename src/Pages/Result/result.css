@@ -1,0 +1,45 @@
+.result {
+    margin-left: 100px;
+}
+.result .result__list p {
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+.result .result__list p span {
+    font-weight: 700;
+    font-size: 18px;
+    margin-left: 10px;
+}
+.result .result__list p .corr {
+    color: green;
+}
+.result .result__list p .incorr {
+    color: red;
+}
+.result .result__list button {
+    padding: 10px 25px;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.result .result__answer .answer__selected {
+    color: red;
+    font-weight: 600;
+}
+.result .result__answer .answer__correct {
+    color: green;
+    font-weight: 600;
+}
+.result h2 .check {
+    margin-left: 10px;
+}
+.result h2 span .a{
+    font-weight: 400;
+    font-size: 20px;
+    padding-right: 15px;
+    padding-left: 5px;
+    border-right: 2px solid black;
+}
+.result h2 span .a:last-child {
+    border: none;
+}
