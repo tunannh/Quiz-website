@@ -20,6 +20,13 @@ ul li {
     font-weight: 700;
     font-size: 25px;
     color: black;
+    display: flex;
+    align-items: center;
+}
+.layout__header .layout__logo img {
+    width: 45px;
+    height: 45px;
+    margin-left: 15px;
 }
 .layout__header .layout__menu ul {
     display: flex;

@@ -17,7 +17,10 @@ function LayoutDefault() {
     <>
       <div className="layout">
         <header className="layout__header">
-          <div className="layout__logo"><NavLink to="/">QuizWeb</NavLink></div>
+          <div className="layout__logo">
+            <NavLink to="/">QuizWeb</NavLink>
+            <img src="./assets/logo.png" alt="" />
+          </div>
           <div className="layout__menu">
 
             <ul>
