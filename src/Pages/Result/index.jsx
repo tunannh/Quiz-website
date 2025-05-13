@@ -7,7 +7,7 @@ import "./result.css"
 function Result() {
   const param = useParams();
   const navigate = useNavigate()
-  const [listUserAnswer, setListUserAnswer] = useState({});
+  // const [listUserAnswer, setListUserAnswer] = useState({});
   const [dataResult, setDataResult] = useState([])
 
   const lamLai = () => {
@@ -17,18 +17,18 @@ function Result() {
     const fetchApi = async () => {
       const result = await getListAnswerById(param.id);
       const gListQuestion = await getListQuestion(result.topicId);
-      // setListUserAnswer(result);
       let final = [];
       for (let i = 0; i < gListQuestion.length; i++) {
         final.push({
           ...gListQuestion[i],
-          ...result.answers.find(item => (item.questionId === parseInt(gListQuestion[i].id)))
+          ...result.answers.find(item => (item.questionId === gListQuestion[i].id))
         })
       }
       setDataResult(final);
     }
     fetchApi();
   }, [])
+  
 
   const sumQuestion = dataResult.length;
   let sumCorr = 0;

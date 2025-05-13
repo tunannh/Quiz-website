@@ -1,4 +1,4 @@
-const API_DOMAIN = "https://db-for-quizweb-tunannhs-projects.vercel.app/";
+const API_DOMAIN = "https://api-quiz-silq.onrender.com/";
 
 export const get = async (path) => {
     const respond = await fetch(API_DOMAIN + path);

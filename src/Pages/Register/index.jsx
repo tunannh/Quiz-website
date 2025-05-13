@@ -29,19 +29,16 @@ function Register() {
         fullName: fullName,
         email: email,
         password: password,
-        token: generateToken(),
-        id: user.length.toString()
+        token: generateToken()
       };
-      alert("Sign up successful");
-      toLogin("/login");
       const result = await register(inForAccount);
-      
-      // if (result) {
-      //   alert("Sign up successful")
-      //   toLogin("/login")
-      // } else {
-      //   alert("Sign up failed")
-      // }
+      if (result) {
+        alert("Sign up successful")
+        toLogin("/login");
+      }
+      else {
+        alert("Sign up failed")
+      }
     }
   }
   return (

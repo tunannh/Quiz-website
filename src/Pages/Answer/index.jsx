@@ -10,8 +10,6 @@ function Answer() {
     const fetchapi = async () => {
       const listAnswer = await getListAnswerByUserId();
       const listTopic = await getListTopic();
-      console.log(listAnswer);
-      console.log(listTopic);      
       let result = [];
       for (let i = 0; i < listAnswer.length; i++) {
         const topic = listTopic.find(item => item.id == listAnswer[i].topicId)

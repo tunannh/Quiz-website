@@ -47,11 +47,7 @@ function Quiz() {
         })
       }
     }
-    // const day = new Date().getDate();
-    // const month = new Date().getMonth() + 1;
-    // const year = new Date().getFullYear();
-    // const hour = new Date().getHours();
-    // const minute = new Date().getMinutes();
+
     const now = new Date();
     const date = now.toLocaleDateString('en-GB');
     const time = now.toLocaleTimeString('en-GB');
@@ -61,28 +57,12 @@ function Quiz() {
       time: timesubmit,
       userId: parseInt(getCookie("id")),
       topicId: parseInt(param.id),
-      answers: selectedAnswer,
-      id: listAns.length.toString()
+      answers: selectedAnswer
     }
-
-    // const result = await addAnswer(option);
-    fetch('https://db-for-quizweb-tunannhs-projects.vercel.app/answers', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(option),
-    })
-      .then(res => {
-        if (!res.ok) {
-          console.warn('Lỗi POST nhưng vẫn tiếp tục:', res.status);
-        }
-        return res.json();  // Có thể lỗi tiếp, nên bắt tiếp
-      })
-      .then(data => {
-        console.log('Kết quả:', data);
-      })
-      .catch(err => {
-        navigate(`/result/${option.id}`);
-      });
+    
+    const result = await addAnswer(option);
+    
+    navigate(`/result/${result.data.id}`);
   }
 
   return (
